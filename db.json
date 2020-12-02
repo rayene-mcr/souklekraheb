@@ -1,0 +1,96 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "cars": [
+    {
+      "name": "BMW M3",
+      "immatriculation": "192",
+      "puissance": "7",
+      "kilometrage": "100",
+      "annee": "2011",
+      "prix": "30 000",
+      "id": 1
+    },
+    {
+      "name": "Polo 7",
+      "immatriculation": "153",
+      "puissance": "5",
+      "kilometrage": "121000",
+      "annee": "2011",
+      "prix": "29 000",
+      "id": 2
+    },
+    {
+      "name": "Golf 6",
+      "immatriculation": "188",
+      "puissance": "6",
+      "kilometrage": "200 000",
+      "annee": "2013",
+      "prix": "30 000",
+      "id": 3
+    },
+    {
+      "name": "Mercedes C63 AMG",
+      "immatriculation": "200",
+      "puissance": "20",
+      "kilometrage": "120 000",
+      "annee": "2010",
+      "prix": "200 000",
+      "id": 4
+    },
+    {
+      "name": "Golf 7",
+      "immatriculation": "2010",
+      "puissance": "7",
+      "kilometrage": "1000",
+      "annee": "2020",
+      "prix": "90 000",
+      "id": 5
+    },
+    {
+      "url": "C:\\fakepath\\11920351samaramorganmq3.jpg",
+      "name": "aa",
+      "immatriculation": "zzz",
+      "puissance": "7",
+      "kilometrage": "5",
+      "annee": "2020",
+      "prix": "3",
+      "id": 6
+    },
+    {
+      "url": "C:\\fakepath\\bayouma.jpg",
+      "name": "BMW",
+      "immatriculation": "22",
+      "puissance": "7",
+      "kilometrage": "55",
+      "annee": "2020",
+      "prix": "50000",
+      "id": 7
+    },
+    {
+      "url": "C:\\fakepath\\bayouma.jpg",
+      "name": "BMW",
+      "immatriculation": "188",
+      "puissance": "6",
+      "kilometrage": "34",
+      "annee": "2020",
+      "prix": "90 000",
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<div class="allcontain">
+	<div class="header">
+			
+			<ul class="souklekraheb" >
+				<li>SOUK-LEKRAHEB</li>
+			</ul>
+			
+	</div>
+	<!-- Navbar Up -->
+	<nav class="topnavbar navbar-default topnav">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
+					<span class="sr-only"> Toggle navigaion</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+			</div>	 
+		</div>
+		<div class="collapse navbar-collapse" id="upmenu">
+			<ul class="nav navbar-nav" id="navbarontop">
+				<li class="active"><a href="#" routerLink="/home">HOME</a> </li>
+				<li>
+					<a routerLink="/view">VIEW PRODUCTS</a>
+				</li>
+				<li>
+					<a routerLink="/post">POST A NEW CAR</a>
+				</li>
+				<li>
+					<a >CONTACT</a>
+ 
+				</li>
+				
+			</ul>
+		</div>
+	</nav>
+</div>
+<input #query (keyup)="search(query.value)" type="text" class="form-control" placeholder="Search...">
+<div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+<div *ngFor="let c of searchCar">
+    <!--div class="feturedimage"-->
+     <!--div class="row firstrow"-->
+         <!--div class="col-lg-6 costumcol colborder1"-->
+             <!--div class="row costumrow"-->
+                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
+                     <!--img src="/assets/image/featurporch.jpg" alt="porsche"-->
+                 </div>
+                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+                     <div class="featurecontant">
+                         <h1>{{c.name}}</h1>
+                         <h2><img src="{{c.url}}"/></h2>
+                         <p>{{c.immatriculation}}<br>
+                             {{c.puissance}} <br>
+                             {{c.kilometrage}} <br>
+                             {{c.annee}}
+                                   </p>
+                          <h2>{{c.prix}} &euro;</h2>
+                          <button id="btnRM" (click)="delete(c)">DELETE</button>
+                          <button [routerLink]="['/updatecars',c.id]" id="btnRM" onclick="rmtxt()">EDIT</button>
+                          <button id="btnRM" onclick="rmtxt()">BUY</button>
+                         
+                     </div>
+                 </div>
+             <!--/div-->
+         <!--/div-->
+         
+                     <!--/div-->
+                 <!--/div-->
+             </div>
+            </div>
+
+            <router-outlet></router-outlet>
+

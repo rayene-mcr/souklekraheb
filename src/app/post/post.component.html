@@ -1,0 +1,102 @@
+<div class="allcontain">
+	<div class="header">
+			
+			<ul class="souklekraheb" >
+				<li>SOUK-LEKRAHEB</li>
+			</ul>
+			
+	</div>
+	<!-- Navbar Up -->
+	<nav class="topnavbar navbar-default topnav">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
+					<span class="sr-only"> Toggle navigaion</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+			</div>	 
+		</div>
+		<div class="collapse navbar-collapse" id="upmenu">
+			<ul class="nav navbar-nav" id="navbarontop">
+				<li class="active"><a href="#" routerLink="/welcome">HOME</a> </li>
+				<li>
+					<a routerLink="/view">VIEW PRODUCTS</a>
+				</li>
+				<li>
+					<a routerLink="/post">POST A NEW CAR</a>
+				</li>
+				<li>
+					<a >CONTACT</a>
+ 
+				</li>
+				
+			</ul>
+		</div>
+	</nav>
+</div>
+<div class="container" style="justify-content: center;">
+<form #f="ngForm">
+    <div>
+        <img [src]="url" alt="" width="150" height="100">
+        <input type="file" name="image" (change)="onselectFile($event)" [(ngModel)]="Cars.url">
+    </div>
+    <div class="form-group">
+    <label> Name </label> <input type="text" name="name" [(ngModel)]="Cars.name" #n="ngModel" required  />
+    
+    <div class="alert alert-danger" *ngIf="n.touched && n.errors?.required">Car name is required </div>
+ </div>
+ <div class="form-group">
+ <label >Immatriculation </label> <input type="text" name="immatriculation" [(ngModel)]="Cars.immatriculation" #i="ngModel" required minlength="2" />
+ <div class="alert alert-danger" *ngIf="i.touched && i.errors?.required">Immatriculation obligatoire </div>
+ <div class="alert alert-danger" *ngIf="i.errors?.minlength">Minlength est 2</div>
+</div>
+ <div class="form-group">
+ <label >Puissance </label> <input type="text" name="puissance" [(ngModel)]="Cars.puissance" #p="ngModel" required />
+ <div class="alert alert-danger" *ngIf="p.touched && p.errors?.required ">Puissance Obligatoire </div>
+</div>
+<div class="form-group">
+ <label> Kilométrage </label>  <input type="text" name="quantity" [(ngModel)]="Cars.kilometrage"  #k="ngModel" required  />
+ <div class="alert alert-danger" *ngIf="k.touched && k.errors?.required ">Kilométrage Obligatoire </div>
+</div>
+<div class="form-group">
+ <label> Année </label>  <input type="text" name="annee" [(ngModel)]="Cars.annee" #a="ngModel" required />
+ <div class="alert alert-danger" *ngIf="a.touched && a.errors?.required ">Année Obligatoire </div>
+</div>
+<br>
+    <div>
+ <label>Prix </label>  <input type="text" name="price" [(ngModel)]="Cars.prix" #price="ngModel" required  />
+ <div class="alert alert-danger" *ngIf="price.touched && price.errors?.required">Price is Required</div>
+    </div>
+
+ 
+ <button class="btn btn-warning"  [disabled]="f.invalid" (click)="AddCar()" >Save</button>
+ </form>
+ <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <div *ngFor="let c of listCars">
+        <!--div class="feturedimage"-->
+         <!--div class="row firstrow"-->
+             <!--div class="col-lg-6 costumcol colborder1"-->
+                 <!--div class="row costumrow"-->
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
+                         <!--img src="/assets/image/featurporch.jpg" alt="porsche"-->
+                     </div>
+                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
+                         <div class="featurecontant">
+                             <h1>{{c.name}}</h1>
+                             <p>{{c.immatriculation}}<br>
+                                 {{c.puissance}} <br>
+                                 {{c.kilometrage}} <br>
+                                 {{c.annee}}
+                                       </p>
+                              <h2>{{c.prix}} &euro;</h2>
+                              <button id="btnRM" onclick="rmtxt()">BUY</button>
+                             
+                         </div>
+                     </div>
+                 <!--/div-->
+             <!--/div-->
+            </div>
+               

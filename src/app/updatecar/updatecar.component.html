@@ -1,0 +1,32 @@
+<form #f="ngForm">
+    <div class="form-group">
+    <label> Name </label> <input type="text" name="name" [(ngModel)]="c.name" #n="ngModel" required  />
+    
+    <div class="alert alert-danger" *ngIf="n.touched && n.errors?.required">Car name is required </div>
+ </div>
+ <div class="form-group">
+ <label >Immatriculation </label> <input type="text" name="immatriculation" [(ngModel)]="c.immatriculation" #i="ngModel" required minlength="2" />
+ <div class="alert alert-danger" *ngIf="i.touched && i.errors?.required">Immatriculation obligatoire </div>
+ <div class="alert alert-danger" *ngIf="i.errors?.minlength">Minlength est 2</div>
+</div>
+ <div class="form-group">
+ <label >Puissance </label> <input type="text" name="puissance" [(ngModel)]="c.puissance" #p="ngModel" required />
+ <div class="alert alert-danger" *ngIf="p.touched && p.errors?.required ">Puissance Obligatoire </div>
+</div>
+<div class="form-group">
+ <label> Kilométrage </label>  <input type="text" name="quantity" [(ngModel)]="c.kilometrage"  #k="ngModel" required  />
+ <div class="alert alert-danger" *ngIf="k.touched && k.errors?.required ">Kilométrage Obligatoire </div>
+</div>
+<div class="form-group">
+ <label> Année </label>  <input type="text" name="annee" [(ngModel)]="c.annee" #a="ngModel" required />
+ <div class="alert alert-danger" *ngIf="a.touched && a.errors?.required ">Année Obligatoire </div>
+</div>
+<br>
+    <div>
+ <label>Prix </label>  <input type="text" name="price" [(ngModel)]="c.prix" #price="ngModel" required  />
+ <div class="alert alert-danger" *ngIf="price.touched && price.errors?.required">Price is Required</div>
+    </div>
+
+ 
+ <button class="btn btn-warning"  [disabled]="f.invalid" (click)="UpdateCar()" >UPDATE</button>
+ </form>
